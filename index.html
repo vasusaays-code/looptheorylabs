@@ -122,6 +122,16 @@ animation:cinedrift 26s ease-in-out infinite alternate}
 .hero-cta{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:34px}
 .hero-note{margin-top:28px;color:var(--faint)}
 
+/* ---------- floating bubbles ---------- */
+.float-bubble{position:absolute;background:rgba(255,255,255,.2);backdrop-filter:blur(30px) saturate(1.8);-webkit-backdrop-filter:blur(30px) saturate(1.8);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:12px 22px;font-size:.9rem;font-weight:500;color:var(--ink);box-shadow:0 16px 32px rgba(46,32,120,.05),inset 0 1px 1px rgba(255,255,255,.5);pointer-events:none;z-index:1;display:inline-flex;align-items:center;gap:10px;white-space:nowrap}
+.float-bubble .dot{width:8px;height:8px;border-radius:50%;background:var(--violet);box-shadow:0 0 10px var(--violet);animation:pulse 2s ease-in-out infinite}
+.fb-1{top:18%;left:6%;animation:floaty 9s ease-in-out infinite}
+.fb-2{top:56%;left:8%;animation:floaty 12s ease-in-out infinite reverse}
+.fb-3{top:22%;right:7%;animation:floaty 10s ease-in-out infinite}
+.fb-4{top:58%;right:6%;animation:floaty 11s ease-in-out infinite reverse}
+@keyframes floaty{0%,100%{transform:translateY(0px)}50%{transform:translateY(-14px)}}
+@media (max-width: 1200px) { .float-bubble { display: none; } }
+
 /* ---------- employee marquee ---------- */
 .crew{position:relative;margin-top:clamp(56px,7vw,88px);padding-bottom:clamp(74px,9vw,116px);overflow:hidden}
 .crew::before,.crew::after{content:"";position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none}
@@ -604,6 +614,10 @@ section{overflow-x:clip}
 
   <!-- ================= HERO ================= -->
   <header class="hero">
+    <div class="float-bubble fb-1"><span class="dot"></span>WhatsApp reply &lt; 1s</div>
+    <div class="float-bubble fb-2"><span class="dot"></span>Handles calls 24/7</div>
+    <div class="float-bubble fb-3"><span class="dot"></span>Saves 40hrs/week</div>
+    <div class="float-bubble fb-4"><span class="dot"></span>Deployed in 14 days</div>
     <div class="glow g1"></div>
     <div class="glow g2"></div>
     <div class="glow g3"></div>
