@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    { "source": "/maya", "destination": "/employees/maya/", "permanent": true },
+    { "source": "/ravi", "destination": "/employees/ravi/", "permanent": true },
+    { "source": "/sandhya", "destination": "/employees/sandhya/", "permanent": true },
+    { "source": "/tara", "destination": "/employees/tara/", "permanent": true },
+    { "source": "/raju", "destination": "/employees/raju/", "permanent": true },
+    { "source": "/ramu", "destination": "/employees/ramu/", "permanent": true }
+  ]
+}
