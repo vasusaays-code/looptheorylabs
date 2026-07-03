@@ -360,7 +360,7 @@ section{padding:clamp(76px,9vw,124px) 0;scroll-margin-top:92px;position:relative
 .footer .fb b{font-weight:600;font-size:.96rem}
 .footer span{font-family:var(--mono);font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--faint)}
 .footer .socials{display:flex;gap:8px}
-.footer .socials span{border:1px solid var(--hair);border-radius:999px;padding:8px 14px;font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;color:var(--mut)}
+.footer .socials a,.footer .socials span{display:inline-block;border:1px solid var(--hair);border-radius:999px;padding:8px 14px;font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;color:var(--mut);text-decoration:none}
 
 /* ---------- responsive ---------- */
 @media (max-width:1020px){
@@ -456,8 +456,8 @@ section{padding:clamp(76px,9vw,124px) 0;scroll-margin-top:92px;position:relative
 .step:hover h3{color:var(--violet)}
 .step .when{transition:transform .25s,box-shadow .25s}
 .step:hover .when{transform:translateY(-2px);box-shadow:0 8px 18px rgba(91,69,232,.22)}
-.footer .socials span{transition:background .25s,color .25s,border-color .25s,transform .25s;cursor:pointer}
-.footer .socials span:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-2px)}
+.footer .socials a,.footer .socials span{transition:background .25s,color .25s,border-color .25s,transform .25s;cursor:pointer}
+.footer .socials a:hover,.footer .socials span:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-2px)}
 .sec-label .loop{transform-origin:center;animation:loopbreathe 3.4s ease-in-out infinite}
 @keyframes loopbreathe{50%{transform:scaleX(1.16)}}
 .meta-strip .cell b{transition:color .25s}
@@ -1107,7 +1107,7 @@ section{overflow-x:clip}
       <footer class="footer">
         <div class="fb"><span class="loop" aria-hidden="true"></span><b>Looptheory</b></div>
         <span>© 2026 Looptheory — running on an infinite&nbsp;loop&nbsp;∞</span>
-        <div class="socials"><span>X</span><span>LinkedIn</span><span>Instagram</span></div>
+        <div class="socials"><span>X</span><span>LinkedIn</span><a href="https://www.instagram.com/looptheorylabs/" target="_blank">Instagram</a></div>
       </footer>
     </div>
   </section>
