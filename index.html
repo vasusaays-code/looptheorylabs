@@ -213,35 +213,27 @@ section{padding:clamp(76px,9vw,124px) 0;scroll-margin-top:92px;position:relative
 .ticket.violet .tk-code{opacity:.85}
 
 /* ---------- how it works (animated timeline) ---------- */
-.how-panel{position:relative;background:transparent;border:none;border-radius:30px;padding:clamp(30px,4vw,52px);box-shadow:0 20px 50px rgba(46,32,120,.1);overflow:hidden}
-.how-panel::before{content:"";position:absolute;inset:-80%;background:conic-gradient(from 0deg,transparent 0 72%,rgba(116,97,255,.9) 84%,rgba(165,180,252,.95) 92%,transparent 98%);animation:cespin 7s linear infinite}
-.how-panel::after{content:"";position:absolute;inset:2px;border-radius:28px;background:radial-gradient(60% 80% at 8% 0%,rgba(165,180,252,.18),transparent 60%),radial-gradient(55% 75% at 96% 100%,rgba(116,97,255,.14),transparent 62%),var(--surface);background-size:170% 170%,170% 170%,auto;animation:howdrift 11s ease-in-out infinite alternate}
-@keyframes howdrift{to{background-position:60% 70%,40% 20%,0 0}}
-.how-panel>*{position:relative;z-index:1}
-.how-panel .panelglow{position:absolute;width:560px;height:560px;border-radius:50%;background:radial-gradient(closest-side,rgba(116,97,255,.13),transparent);top:-240px;right:-180px;pointer-events:none}
-.tl{display:grid;grid-template-columns:repeat(3,1fr);align-items:center;margin-bottom:30px;position:relative;z-index:1}
-.tl-cell{display:flex;align-items:center;padding-right:34px}
-.node{width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid rgba(91,69,232,.32);position:relative;flex-shrink:0;transition:border-color .3s,box-shadow .3s}
-.node::after{content:"";position:absolute;inset:3px;border-radius:50%;background:linear-gradient(135deg,#7461FF,#4A38C9);transform:scale(0);transition:transform .35s cubic-bezier(.3,1.6,.4,1)}
-.node.on{border-color:var(--violet);box-shadow:0 0 0 7px rgba(91,69,232,.13)}
-.node.on::after{transform:scale(1)}
-.bar{flex-grow:1;height:2.5px;background:rgba(91,69,232,.14);margin-left:14px;border-radius:3px;overflow:hidden}
-.bar i{display:block;height:100%;background:linear-gradient(90deg,#7461FF,#4A38C9);transform:scaleX(0);transform-origin:left;border-radius:3px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);position:relative;z-index:1}
-.step{padding:8px 34px 10px 2px;position:relative;border-radius:20px}
-.step-top{display:flex;align-items:center;gap:12px}
-.step-top .ic{width:34px;height:34px;border-radius:11px}
-.step.hl .ic{background:rgba(255,255,255,.16);color:#fff}
-.step .when{display:inline-block;font-family:var(--mono);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--violet-deep);background:#EFEBFF;border-radius:999px;padding:6px 12px}
-.step h3{font-size:1.34rem;font-weight:600;letter-spacing:-.02em;margin:18px 0 10px}
-.step p{color:var(--mut);font-size:.94rem;line-height:1.66}
-.step.hl{background:linear-gradient(150deg,#6D5BFF 0%,#5B45E8 55%,#4232B8 100%);color:#fff;padding:26px 26px 28px;margin:-18px 0 -18px 8px;box-shadow:0 26px 60px rgba(91,69,232,.35)}
-.step.hl h3{color:#fff}
-.step.hl:hover h3{color:#fff}
-.step.hl p{color:rgba(255,255,255,.85)}
-.step.hl .when{background:rgba(255,255,255,.18);color:#fff}
-.step.hl .live{display:inline-flex;align-items:center;gap:8px;margin-top:18px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:7px 13px;font-size:.74rem;font-weight:600}
-.step.hl .live i{width:8px;height:8px;border-radius:50%;background:#4ADE80;animation:pulse 1.8s ease-in-out infinite}
+/* ---------- how it works (dark vertical) ---------- */
+#how { background: radial-gradient(120% 120% at 50% 0%, #151226 0%, #0B0A11 100%); color: #fff; padding: 140px 0; margin-top: -1px; }
+.hd-steps { display: flex; flex-direction: column; gap: 16px; max-width: 1000px; margin: 0 auto; position: relative; z-index: 1; padding: 0 clamp(16px, 4vw, 40px); }
+.hd-step { display: flex; align-items: center; gap: clamp(16px, 4vw, 32px); background: transparent; padding: 28px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.hd-step:last-child { border-bottom: none; }
+.hd-num { font-family: var(--serif); font-size: clamp(3.5rem, 5vw, 4.5rem); font-style: italic; color: rgba(255,255,255,0.04); font-weight: 400; min-width: 80px; }
+.hd-icon { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: inset 0 2px 10px rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); }
+.hd-icon.ic1 { background: #1B122C; border-color: #38245C; }
+.hd-icon.ic2 { background: #2A131E; border-color: #5C2742; }
+.hd-icon.ic3 { background: #12222A; border-color: #1F3F4C; }
+.hd-icon.ic4 { background: #132C1D; border-color: #235436; }
+.hd-icon svg { width: 24px; height: 24px; color: #fff; }
+.hd-text { flex-grow: 1; }
+.hd-text h3 { font-size: 1.25rem; font-weight: 600; color: #fff; margin-bottom: 8px; letter-spacing: -0.01em; }
+.hd-text p { color: rgba(255,255,255,0.4); font-size: 0.95rem; line-height: 1.5; margin: 0; }
+.hd-pill { background: rgba(255,255,255,0.04); color: rgba(255,255,255,0.3); font-family: var(--mono); font-size: 0.65rem; padding: 6px 16px; border-radius: 999px; letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; flex-shrink: 0; margin-left: 20px; }
+@media (max-width: 768px) {
+  .hd-step { flex-wrap: wrap; position: relative; padding-top: 40px; }
+  .hd-num { position: absolute; top: 0; left: 0; font-size: 3rem; }
+  .hd-pill { position: absolute; top: 10px; right: 0; margin: 0; }
+}
 
 /* ---------- the psychology shift ---------- */
 .shift{position:relative;padding:clamp(20px,3vw,40px) 0 0;text-align:center}
@@ -806,39 +798,66 @@ section{overflow-x:clip}
 
   <!-- ================= 02 HOW ================= -->
   <section id="how">
-    <div class="beam" aria-hidden="true"></div>
     <div class="container">
-      <div class="sec-head" data-reveal>
-        <div>
-          <span class="sec-label"><span class="loop" aria-hidden="true"></span><span class="lt">02 — How it works</span></span>
-          <h2>Live in <em class="ser">two weeks.</em></h2>
+      <div class="sec-head" data-reveal style="text-align: left;">
+        <div style="margin-bottom: 24px;">
+          <span class="sec-label" style="border-radius: 999px; border: 1px solid rgba(255,255,255,0.1); padding: 8px 16px; display: inline-flex; align-items: center; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.4); background: transparent;">
+            <span class="dot" style="width: 6px; height: 6px; background: #3B82F6; border-radius: 50%; margin-right: 12px; box-shadow: 0 0 10px #3B82F6;"></span>HOW IT WORKS
+          </span>
         </div>
-        <p class="sec-note">No six-month transformation. We scope, train, and deploy — then manage your employee like an agency manages talent.</p>
+        <h2 style="font-family: var(--serif); font-size: clamp(3.5rem, 7vw, 5.5rem); font-style: italic; font-weight: 400; line-height: 1; letter-spacing: -0.04em; color: #fff; max-width: 800px; margin-bottom: 0;">
+          First call to live system.<br>
+          <span class="faint" style="color: rgba(255,255,255,0.25);">In 2 weeks.</span>
+        </h2>
       </div>
-      <div class="how-panel">
-        <div class="panelglow" aria-hidden="true"></div>
-        <div class="tl" aria-hidden="true">
-          <div class="tl-cell"><span class="node"></span><span class="bar"><i></i></span></div>
-          <div class="tl-cell"><span class="node"></span><span class="bar"><i></i></span></div>
-          <div class="tl-cell"><span class="node"></span></div>
+
+      <div class="hd-steps" data-reveal>
+        <div class="hd-step">
+          <div class="hd-num">01</div>
+          <div class="hd-icon ic1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </div>
+          <div class="hd-text">
+            <h3>Free 30-min audit call</h3>
+            <p>We find exactly where your business leaks revenue and what to automate first. No fluff.</p>
+          </div>
+          <div class="hd-pill">DAY 1</div>
         </div>
-        <div class="steps">
-          <div class="step">
-            <div class="step-top"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><line x1="12" y1="1.5" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22.5"/><line x1="1.5" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22.5" y2="12"/></svg></span><span class="when">Week 01</span></div>
-            <h3>Scope</h3>
-            <p>We map the workflows eating your team's time and pick the right first hire for the job.</p>
+
+        <div class="hd-step">
+          <div class="hd-num">02</div>
+          <div class="hd-icon ic2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
           </div>
-          <div class="step">
-            <div class="step-top"><span class="ic"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span class="when">Week 02</span></div>
-            <h3>Train</h3>
-            <p>Your employee learns your playbooks, tools, and tone of voice. You approve everything before launch.</p>
+          <div class="hd-text">
+            <h3>Fixed scope & price</h3>
+            <p>Exact deliverables, timeline, and cost in writing — before we touch a single line of code.</p>
           </div>
-          <div class="step hl">
-            <div class="step-top"><span class="ic"><svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></span><span class="when">Day 14</span></div>
-            <h3>Deploy</h3>
-            <p>They clock in. You watch it all from one dashboard — with humans in the loop for anything that needs judgment.</p>
-            <span class="live"><i></i>On shift</span>
+          <div class="hd-pill">DAY 2–3</div>
+        </div>
+
+        <div class="hd-step">
+          <div class="hd-num">03</div>
+          <div class="hd-icon ic3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
           </div>
+          <div class="hd-text">
+            <h3>We build everything</h3>
+            <p>You run your business. We handle the entire build, setup, and integration end to end.</p>
+          </div>
+          <div class="hd-pill">DAY 4–12</div>
+        </div>
+
+        <div class="hd-step">
+          <div class="hd-num">04</div>
+          <div class="hd-icon ic4">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+          </div>
+          <div class="hd-text">
+            <h3>Goes live. You see results.</h3>
+            <p>System launches in 2 weeks. Hours saved and revenue captured within 30 days — guaranteed.</p>
+          </div>
+          <div class="hd-pill">DAY 14</div>
         </div>
       </div>
     </div>
