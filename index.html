@@ -196,6 +196,10 @@ section{padding:clamp(76px,9vw,124px) 0;scroll-margin-top:92px;position:relative
 .tk-photo .hole{position:absolute;border-radius:50%;background:var(--tk-bg)}
 .tk-photo .hole.h1{width:26px;height:26px;top:16px;right:18px}
 .tk-photo .hole.h2{width:24px;height:24px;bottom:-12px;left:50%;transform:translateX(-50%)}
+.ticket .tk-status { position: absolute; top: 16px; right: 16px; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; z-index: 10; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.ticket .tk-status.coming-soon { background: rgba(16, 16, 20, 0.6); color: var(--peri); border: 1px solid rgba(165, 180, 252, 0.2); }
+.ticket .tk-status.now-available { background: rgba(91, 69, 232, 0.8); color: #FFF; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 0 12px rgba(91, 69, 232, 0.5); }
+.ticket.is-soon { opacity: 0.8; filter: grayscale(0.5); pointer-events: none !important; }
 .tk-mid{padding:14px 20px 16px}
 .tk-date{display:flex;align-items:center;gap:14px}
 .tk-date b{font-weight:500;font-size:1.12rem;letter-spacing:.02em}
@@ -708,6 +712,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="tk-grid">
         <article class="ticket" data-tilt data-emp="/employees/maya/" style="cursor:pointer">
+          <div class="tk-status now-available">Now Available</div>
           <div class="shine"></div>
           <div class="tk-photo p-maya" role="img" aria-label="Maya, stylized 3D portrait wearing a headset"><span class="hole h1"></span><span class="hole h2"></span></div>
           <div class="tk-mid">
@@ -726,7 +731,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </article>
 
-        <article class="ticket violet" data-tilt data-emp="/employees/ravi/" style="cursor:pointer">
+        <article class="ticket violet is-soon" data-tilt data-emp="/employees/ravi/" style="cursor:pointer">
+          <div class="tk-status coming-soon">Coming Soon</div>
           <div class="shine"></div>
           <div class="tk-photo p-ravi" role="img" aria-label="Ravi, stylized 3D portrait wearing a headset"><span class="hole h1"></span><span class="hole h2"></span></div>
           <div class="tk-mid">
@@ -745,7 +751,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </article>
 
-        <article class="ticket" data-tilt data-emp="/employees/sandhya/" style="cursor:pointer">
+        <article class="ticket is-soon" data-tilt data-emp="/employees/sandhya/" style="cursor:pointer">
+          <div class="tk-status coming-soon">Coming Soon</div>
           <div class="shine"></div>
           <div class="tk-photo p-sandhya" role="img" aria-label="Sandhya, stylized 3D portrait in a violet sweater"><span class="hole h1"></span><span class="hole h2"></span></div>
           <div class="tk-mid">
@@ -764,7 +771,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </article>
 
-        <article class="ticket violet" data-tilt data-emp="/employees/tara/" style="cursor:pointer">
+        <article class="ticket violet is-soon" data-tilt data-emp="/employees/tara/" style="cursor:pointer">
+          <div class="tk-status coming-soon">Coming Soon</div>
           <div class="shine"></div>
           <div class="tk-photo p-tara" role="img" aria-label="Tara, stylized 3D portrait with round glasses"><span class="hole h1"></span><span class="hole h2"></span></div>
           <div class="tk-mid">
@@ -783,7 +791,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </article>
 
-        <article class="ticket" data-tilt data-emp="/employees/raju/" style="cursor:pointer">
+        <article class="ticket is-soon" data-tilt data-emp="/employees/raju/" style="cursor:pointer">
+          <div class="tk-status coming-soon">Coming Soon</div>
           <div class="shine"></div>
           <div class="tk-photo p-raju" role="img" aria-label="Raju, stylized 3D portrait with a short beard"><span class="hole h1"></span><span class="hole h2"></span></div>
           <div class="tk-mid">
@@ -802,7 +811,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </article>
 
-        <article class="ticket violet" data-tilt data-emp="/employees/ramu/" style="cursor:pointer">
+        <article class="ticket violet is-soon" data-tilt data-emp="/employees/ramu/" style="cursor:pointer">
+          <div class="tk-status coming-soon">Coming Soon</div>
           <div class="shine"></div>
           <div class="tk-photo p-ramu" role="img" aria-label="Ramu, stylized 3D portrait with rectangular glasses"><span class="hole h1"></span><span class="hole h2"></span></div>
           <div class="tk-mid">
